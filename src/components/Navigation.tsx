@@ -1,6 +1,6 @@
 
 import { Button } from "@/components/ui/button";
-import { Home, Search, Airplane, Users, CreditCard, Phone } from "lucide-react";
+import { Home, Search, Plane, Users, CreditCard, Phone } from "lucide-react";
 
 interface NavigationProps {
   activeSection: string;
@@ -11,9 +11,9 @@ export const Navigation = ({ activeSection, setActiveSection }: NavigationProps)
   const navItems = [
     { id: "home", label: "Home", icon: Home },
     { id: "search", label: "Search", icon: Search },
-    { id: "flights", label: "Flights", icon: Airplane },
+    { id: "flights", label: "Flights", icon: Plane },
     { id: "bookings", label: "Bookings", icon: Users },
-    { id: "services", label: "Services", icon: Airplane },
+    { id: "services", label: "Services", icon: Plane },
     { id: "payments", label: "Payments", icon: CreditCard },
     { id: "contact", label: "Contact", icon: Phone },
   ];
@@ -24,7 +24,7 @@ export const Navigation = ({ activeSection, setActiveSection }: NavigationProps)
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center gap-2">
             <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center">
-              <Airplane className="h-5 w-5 text-white" />
+              <Plane className="h-5 w-5 text-white" />
             </div>
             <span className="text-xl font-bold text-blue-600">SKYLET</span>
           </div>

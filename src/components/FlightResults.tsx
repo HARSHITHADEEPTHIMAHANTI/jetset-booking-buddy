@@ -1,8 +1,7 @@
-
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Airplane, Clock, MapPin } from "lucide-react";
+import { Plane, Clock, MapPin } from "lucide-react";
 
 interface FlightResultsProps {
   searchData: any;
@@ -100,7 +99,7 @@ export const FlightResults = ({ searchData, showAllFlights = false }: FlightResu
                       <div className="flex items-center gap-2">
                         <div className="w-3 h-3 rounded-full bg-blue-600"></div>
                         <div className="w-16 h-0.5 bg-blue-600"></div>
-                        <Airplane className="h-4 w-4 text-blue-600" />
+                        <Plane className="h-4 w-4 text-blue-600" />
                         <div className="w-16 h-0.5 bg-blue-600"></div>
                         <div className="w-3 h-3 rounded-full bg-blue-600"></div>
                       </div>
