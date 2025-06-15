@@ -13,6 +13,7 @@ import { cn } from "@/lib/utils";
 import { FlightResults } from "@/components/FlightResults";
 import { PopularDestinations } from "@/components/PopularDestinations";
 import { Navigation } from "@/components/Navigation";
+import { FoodServices } from "@/components/FoodServices";
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState("home");
@@ -56,8 +57,15 @@ const Index = () => {
         );
       case "services":
         return (
-          <div className="max-w-4xl mx-auto p-8">
-            <h2 className="text-3xl font-bold mb-6">Our Services</h2>
+          <div className="max-w-6xl mx-auto p-8">
+            <h2 className="text-3xl font-bold mb-8">Our Services</h2>
+            
+            {/* Food Services Section */}
+            <div className="mb-12">
+              <FoodServices />
+            </div>
+            
+            {/* Other Services */}
             <div className="grid md:grid-cols-2 gap-6">
               <Card>
                 <CardContent className="p-6">
