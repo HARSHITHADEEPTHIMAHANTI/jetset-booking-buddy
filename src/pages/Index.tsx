@@ -139,11 +139,14 @@ const Index = () => {
           <>
             {/* Hero Section */}
             <div className="relative min-h-screen bg-gradient-to-br from-blue-900 via-blue-700 to-orange-400 overflow-hidden">
-              <div className="absolute inset-0 bg-black/30"></div>
+              <div className="absolute inset-0 bg-black/20"></div>
               <div 
-                className="absolute inset-0 bg-cover bg-center opacity-60"
+                className="absolute inset-0 bg-cover bg-center opacity-90 scale-110"
                 style={{
-                  backgroundImage: `url('/lovable-uploads/fc51d60a-163b-4ed0-b07e-17b00745841e.png')`
+                  backgroundImage: `url('/lovable-uploads/fc51d60a-163b-4ed0-b07e-17b00745841e.png')`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  transform: 'scale(1.1)'
                 }}
               ></div>
               
