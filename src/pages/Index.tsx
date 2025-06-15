@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -143,7 +144,7 @@ const Index = () => {
               <div 
                 className="absolute inset-0 bg-cover bg-center opacity-60"
                 style={{
-                  backgroundImage: `url('/lovable-uploads/08b6ac24-e3cf-41f8-984b-905e314a1fbf.png')`
+                  backgroundImage: `url('/lovable-uploads/fc51d60a-163b-4ed0-b07e-17b00745841e.png')`
                 }}
               ></div>
               
