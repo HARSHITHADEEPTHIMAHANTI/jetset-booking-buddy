@@ -3,6 +3,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { Label } from "@/components/ui/label";
 import { Calendar, CalendarIcon, Search, Home, Plane, Users, CreditCard, Phone, MapPin } from "lucide-react";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { format } from "date-fns";
@@ -14,6 +16,7 @@ import { Navigation } from "@/components/Navigation";
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState("home");
+  const [tripType, setTripType] = useState("round-trip");
   const [searchData, setSearchData] = useState({
     from: "Bangalore (BLR)",
     to: "Vizag (VTZ)",
@@ -157,6 +160,20 @@ const Index = () => {
                 {/* Search Form */}
                 <Card className="w-full max-w-4xl bg-white/95 backdrop-blur-sm">
                   <CardContent className="p-6">
+                    {/* Trip Type Selection */}
+                    <div className="mb-6">
+                      <RadioGroup value={tripType} onValueChange={setTripType} className="flex gap-6">
+                        <div className="flex items-center space-x-2">
+                          <RadioGroupItem value="one-way" id="one-way" />
+                          <Label htmlFor="one-way" className="text-gray-700 font-medium">One Way</Label>
+                        </div>
+                        <div className="flex items-center space-x-2">
+                          <RadioGroupItem value="round-trip" id="round-trip" />
+                          <Label htmlFor="round-trip" className="text-gray-700 font-medium">Round Trip</Label>
+                        </div>
+                      </RadioGroup>
+                    </div>
+
                     <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-4">
                       <div>
                         <label className="block text-sm font-medium text-gray-700 mb-1">From</label>
@@ -205,6 +222,28 @@ const Index = () => {
                           </PopoverContent>
                         </Popover>
                       </div>
+
+                      {tripType === "round-trip" && (
+                        <div>
+                          <label className="block text-sm font-medium text-gray-700 mb-1">Return</label>
+                          <Popover>
+                            <PopoverTrigger asChild>
+                              <Button variant="outline" className={cn("w-full justify-start text-left font-normal")}>
+                                <CalendarIcon className="mr-2 h-4 w-4" />
+                                {format(searchData.returnDate, "PPP")}
+                              </Button>
+                            </PopoverTrigger>
+                            <PopoverContent className="w-auto p-0">
+                              <CalendarComponent
+                                mode="single"
+                                selected={searchData.returnDate}
+                                onSelect={(date) => date && setSearchData({...searchData, returnDate: date})}
+                                className="p-3 pointer-events-auto"
+                              />
+                            </PopoverContent>
+                          </Popover>
+                        </div>
+                      )}
 
                       <div>
                         <label className="block text-sm font-medium text-gray-700 mb-1">Passengers</label>
