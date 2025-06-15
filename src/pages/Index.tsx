@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -160,26 +159,26 @@ const Index = () => {
 
                 {/* Search Form */}
                 <Card className="w-full max-w-4xl bg-white/95 backdrop-blur-sm">
-                  <CardContent className="p-6">
+                  <CardContent className="p-4">
                     {/* Trip Type Selection */}
-                    <div className="mb-6">
-                      <RadioGroup value={tripType} onValueChange={setTripType} className="flex gap-6">
+                    <div className="mb-4">
+                      <RadioGroup value={tripType} onValueChange={setTripType} className="flex gap-4">
                         <div className="flex items-center space-x-2">
                           <RadioGroupItem value="one-way" id="one-way" />
-                          <Label htmlFor="one-way" className="text-gray-700 font-medium">One Way</Label>
+                          <Label htmlFor="one-way" className="text-gray-700 font-medium text-sm">One Way</Label>
                         </div>
                         <div className="flex items-center space-x-2">
                           <RadioGroupItem value="round-trip" id="round-trip" />
-                          <Label htmlFor="round-trip" className="text-gray-700 font-medium">Round Trip</Label>
+                          <Label htmlFor="round-trip" className="text-gray-700 font-medium text-sm">Round Trip</Label>
                         </div>
                       </RadioGroup>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-4">
+                    <div className="grid grid-cols-1 md:grid-cols-4 gap-3 mb-3">
                       <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-1">From</label>
+                        <label className="block text-xs font-medium text-gray-700 mb-1">From</label>
                         <Select value={searchData.from} onValueChange={(value) => setSearchData({...searchData, from: value})}>
-                          <SelectTrigger>
+                          <SelectTrigger className="h-8 text-sm">
                             <SelectValue />
                           </SelectTrigger>
                           <SelectContent>
@@ -191,9 +190,9 @@ const Index = () => {
                       </div>
                       
                       <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-1">To</label>
+                        <label className="block text-xs font-medium text-gray-700 mb-1">To</label>
                         <Select value={searchData.to} onValueChange={(value) => setSearchData({...searchData, to: value})}>
-                          <SelectTrigger>
+                          <SelectTrigger className="h-8 text-sm">
                             <SelectValue />
                           </SelectTrigger>
                           <SelectContent>
@@ -205,12 +204,12 @@ const Index = () => {
                       </div>
 
                       <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-1">Departure</label>
+                        <label className="block text-xs font-medium text-gray-700 mb-1">Departure</label>
                         <Popover>
                           <PopoverTrigger asChild>
-                            <Button variant="outline" className={cn("w-full justify-start text-left font-normal")}>
-                              <CalendarIcon className="mr-2 h-4 w-4" />
-                              {format(searchData.departureDate, "PPP")}
+                            <Button variant="outline" className={cn("w-full h-8 justify-start text-left font-normal text-sm")}>
+                              <CalendarIcon className="mr-2 h-3 w-3" />
+                              {format(searchData.departureDate, "MMM dd")}
                             </Button>
                           </PopoverTrigger>
                           <PopoverContent className="w-auto p-0">
@@ -226,12 +225,12 @@ const Index = () => {
 
                       {tripType === "round-trip" && (
                         <div>
-                          <label className="block text-sm font-medium text-gray-700 mb-1">Return</label>
+                          <label className="block text-xs font-medium text-gray-700 mb-1">Return</label>
                           <Popover>
                             <PopoverTrigger asChild>
-                              <Button variant="outline" className={cn("w-full justify-start text-left font-normal")}>
-                                <CalendarIcon className="mr-2 h-4 w-4" />
-                                {format(searchData.returnDate, "PPP")}
+                              <Button variant="outline" className={cn("w-full h-8 justify-start text-left font-normal text-sm")}>
+                                <CalendarIcon className="mr-2 h-3 w-3" />
+                                {format(searchData.returnDate, "MMM dd")}
                               </Button>
                             </PopoverTrigger>
                             <PopoverContent className="w-auto p-0">
@@ -247,9 +246,9 @@ const Index = () => {
                       )}
 
                       <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-1">Passengers</label>
+                        <label className="block text-xs font-medium text-gray-700 mb-1">Passengers</label>
                         <Select value={searchData.passengers} onValueChange={(value) => setSearchData({...searchData, passengers: value})}>
-                          <SelectTrigger>
+                          <SelectTrigger className="h-8 text-sm">
                             <SelectValue />
                           </SelectTrigger>
                           <SelectContent>
@@ -261,11 +260,11 @@ const Index = () => {
                       </div>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mb-4">
                       <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-1">Class</label>
+                        <label className="block text-xs font-medium text-gray-700 mb-1">Class</label>
                         <Select value={searchData.class} onValueChange={(value) => setSearchData({...searchData, class: value})}>
-                          <SelectTrigger>
+                          <SelectTrigger className="h-8 text-sm">
                             <SelectValue />
                           </SelectTrigger>
                           <SelectContent>
@@ -277,13 +276,13 @@ const Index = () => {
                       </div>
 
                       <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-1">Preferred Airline</label>
+                        <label className="block text-xs font-medium text-gray-700 mb-1">Preferred Airline</label>
                         <Select value={searchData.airline} onValueChange={(value) => setSearchData({...searchData, airline: value})}>
-                          <SelectTrigger>
+                          <SelectTrigger className="h-8 text-sm">
                             <SelectValue />
                           </SelectTrigger>
                           <SelectContent>
-                            <SelectItem value="IndiGo">IndiGo (Preferred)</SelectItem>
+                            <SelectItem value="IndiGo">IndiGo</SelectItem>
                             <SelectItem value="SpiceJet">SpiceJet</SelectItem>
                             <SelectItem value="Air India">Air India</SelectItem>
                             <SelectItem value="AirAsia">AirAsia</SelectItem>
@@ -294,21 +293,21 @@ const Index = () => {
                       </div>
 
                       <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-1">Flight Type</label>
+                        <label className="block text-xs font-medium text-gray-700 mb-1">Flight Type</label>
                         <Select value={searchData.flightType} onValueChange={(value) => setSearchData({...searchData, flightType: value})}>
-                          <SelectTrigger>
+                          <SelectTrigger className="h-8 text-sm">
                             <SelectValue />
                           </SelectTrigger>
                           <SelectContent>
-                            <SelectItem value="Direct Flights Only">Direct Flights Only</SelectItem>
+                            <SelectItem value="Direct Flights Only">Direct Only</SelectItem>
                             <SelectItem value="All Flights">All Flights</SelectItem>
                           </SelectContent>
                         </Select>
                       </div>
                     </div>
 
-                    <Button onClick={handleSearch} className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 text-lg">
-                      <Search className="mr-2 h-5 w-5" />
+                    <Button onClick={handleSearch} className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 text-sm">
+                      <Search className="mr-2 h-4 w-4" />
                       Search Flights
                     </Button>
                   </CardContent>
