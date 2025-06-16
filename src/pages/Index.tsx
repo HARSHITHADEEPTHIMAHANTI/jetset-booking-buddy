@@ -14,6 +14,7 @@ import { FlightResults } from "@/components/FlightResults";
 import { PopularDestinations } from "@/components/PopularDestinations";
 import { Navigation } from "@/components/Navigation";
 import { FoodServices } from "@/components/FoodServices";
+import PaymentIcons from "@/components/PaymentIcons";
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState("home");
@@ -96,16 +97,7 @@ const Index = () => {
         return (
           <div className="max-w-4xl mx-auto p-8">
             <h2 className="text-3xl font-bold mb-6">Payment Methods</h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {["PhonePe", "Google Pay", "Net Banking", "Visa", "Paytm"].map((method) => (
-                <Card key={method} className="hover:shadow-lg transition-shadow">
-                  <CardContent className="p-4 text-center">
-                    <CreditCard className="h-8 w-8 mx-auto mb-2 text-blue-600" />
-                    <p className="font-medium">{method}</p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
+            <PaymentIcons />
           </div>
         );
       case "contact":
