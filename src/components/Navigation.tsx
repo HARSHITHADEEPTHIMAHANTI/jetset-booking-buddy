@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Home, Search, Plane, Users, CreditCard, Phone } from "lucide-react";
 
@@ -26,7 +25,7 @@ export const Navigation = ({ activeSection, setActiveSection }: NavigationProps)
             <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center">
               <Plane className="h-5 w-5 text-white" />
             </div>
-            <span className="text-xl font-bold text-blue-600">SKYLET</span>
+            <span className="text-xl font-bold text-blue-600">FlightMate</span>
           </div>
 
           <div className="hidden md:flex items-center gap-1">
